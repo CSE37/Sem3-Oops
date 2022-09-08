@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+class Num2;
+
 class Num1{
 	public:
 		int num;
@@ -8,7 +10,6 @@ class Num1{
 			cout << "Enter a number: ";
 			cin >> num;
 		}
-		friend class Num2;
 		friend void compare(Num1 n1, Num2 n2);
 };
 
@@ -19,6 +20,7 @@ class Num2{
 			cout << "Enter another number: ";
 			cin >> num;
 		}
+		friend void compare(Num1 n1, Num2 n2);
 };
 
 void compare(Num1 n1, Num2 n2){
